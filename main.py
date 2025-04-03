@@ -10,8 +10,16 @@ WORDS = ["jumps", "laziest", "brown", "a", "quick", "fox", "the", "dog", "over"]
 # comparison value as determined by calling the function passed in the key
 # parameter on it. This will be very similar to the min_function_custom
 # developed in the Learn reading.
-def my_max(collection, key):
-    pass
+def my_max(collection, key = sum):
+    if not key:
+        return max(collection)
+    else:
+        for word in collection:
+            value = key(word)
+            for char in word:
+
+
+
 
 # Implement a custom version of filter, called my_filter
 # my_filter takes a function (should_keep) which it will call on every item in

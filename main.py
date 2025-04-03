@@ -11,12 +11,16 @@ WORDS = ["jumps", "laziest", "brown", "a", "quick", "fox", "the", "dog", "over"]
 # parameter on it. This will be very similar to the min_function_custom
 # developed in the Learn reading.
 def my_max(collection, key = sum):
-    if not key:
-        return max(collection)
-    else:
-        for word in collection:
-            value = key(word)
-            for char in word:
+    if not collection:
+        raise ValueError("Collection is empty")
+    max_item = collection[0]
+    max_value = key(max_item)
+
+    for item in collection:
+        if key(item) > max_value:
+            max_value = key(item)
+            max_item = item
+    return max_item
 
 
 
